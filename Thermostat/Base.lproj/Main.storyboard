@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-1V-f2m">
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <segments>
+                                    <segment title="Celsius"/>
+                                    <segment title="Fahrenheit"/>
+                                </segments>
+                                <connections>
+                                    <action selector="unitsValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sW5-dI-FLz"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXZ-km-Ib3">
+                                <fontDescription key="fontDescription" type="system" pointSize="113"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-32" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="M8b-A5-VgM">
+                                <color key="tintColor" red="0.36078431370000003" green="0.41960784309999999" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="tempValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="FSl-0B-sEo"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.36078431370000003" green="0.41960784309999999" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cfK-1V-f2m" firstAttribute="centerX" secondItem="JXZ-km-Ib3" secondAttribute="centerX" id="9oB-kX-fuK"/>
+                            <constraint firstItem="cfK-1V-f2m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="88" id="T0g-WB-JeM"/>
+                            <constraint firstItem="cfK-1V-f2m" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bWj-vy-2GE"/>
+                            <constraint firstItem="M8b-A5-VgM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fw1-i2-J7u"/>
+                            <constraint firstItem="cfK-1V-f2m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="leU-MW-BAi"/>
+                            <constraint firstItem="M8b-A5-VgM" firstAttribute="centerX" secondItem="JXZ-km-Ib3" secondAttribute="centerX" id="m1E-Gj-rG9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M8b-A5-VgM" secondAttribute="bottom" constant="254" id="nk9-jn-aXa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JXZ-km-Ib3" secondAttribute="bottom" constant="388" id="vCP-ZA-UnC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tempControl" destination="M8b-A5-VgM" id="FCF-Yq-drG"/>
+                        <outlet property="tempDisplay" destination="JXZ-km-Ib3" id="YCb-lL-iN6"/>
+                        <outlet property="unitToggleSwitch" destination="cfK-1V-f2m" id="fQX-SJ-fQH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
